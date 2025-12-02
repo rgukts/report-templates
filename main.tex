@@ -1,0 +1,431 @@
+% ================================================================
+% PREAMBLE - Define all customizable fields using \newcommand
+% ================================================================
+\newcommand{\projectname}{PROJECT TITLE}
+\newcommand{\guidename}{Mr./Dr. Guide Name}
+\newcommand{\guidequal}{M.Tech , Ph.D}
+\newcommand{\qualification}{Assistant professor}
+\newcommand{\hodname}{Mr./Dr. HOD Name}
+\newcommand{\hodqual}{Assistant professor}
+\newcommand{\studentone}{Student Name 1}
+\newcommand{\studenttwo}{Student Name 2}
+\newcommand{\studentthree}{Student Name 3}
+\newcommand{\studentfour}{Student Name 4}
+\newcommand{\studentfive}{Student Name 5}
+\newcommand{\studentsix}{Student Name 6}
+\newcommand{\studentidone}{S200XXX}
+\newcommand{\studentidtwo}{S20XXXX}
+\newcommand{\studentidthree}{S20XXXX}
+\newcommand{\studentidfour}{S20XXXX}
+\newcommand{\studentidfive}{S20XXXX}
+\newcommand{\studentidsix}{S20XXXX}
+\newcommand{\branch}{Electronics and Communication Engineering}
+\newcommand{\campus}{Rajiv Gandhi University of Knowledge Technologies - Srikakulam}
+
+% Abstract content (using lipsum for dummy text)
+\newcommand{\abstract}{
+    \lipsum[1]
+   
+    \lipsum[2]
+   
+    \lipsum[3]
+}
+
+% ================================================================
+% DOCUMENT CLASS & PACKAGES
+% ================================================================
+\documentclass[12pt]{report}              % Standard report class, 12pt font
+\raggedbottom                              % Prevents extra vertical space at bottom of pages
+
+% Essential packages
+\usepackage{amsmath,graphicx,fancyhdr}     % Math, images, fancy headers/footers
+\usepackage{geometry}                      % Page margins
+\usepackage{eso-pic}                       % For background/watermark
+\usepackage{tocloft}                       % Customize TOC, LOF, LOT
+\usepackage{enumerate}                     % Better itemize/enumerate
+\usepackage{tikz}                          % Drawing (used for border)
+\usepackage{setspace}                      % Line spacing (onehalfspacing)
+\usepackage{tfrupee}                       % Indian rupee symbol (if needed)
+\usepackage{titlesec}                      % Customize chapter/section titles
+\usepackage{url}                           % Proper URL formatting
+\usepackage{lipsum}                        % Dummy text (Lorem Ipsum)
+\usepackage{float}                         % Better float placement ([H])
+\usepackage{hyperref}                      % Hyperlinks & PDF metadata
+\usepackage{listings}                      % Source code listings
+\usepackage{etoolbox}                      % General toolbox
+\usepackage{background}                    % Page background (border)
+\usepackage{booktabs}                      % Professional tables
+\usepackage{tabularx,array}                % Advanced tables
+\usepackage{emoji}                         % Emoji support (optional)
+\usepackage{wallpaper}                     % Background image/watermark
+\usepackage{lastpage}                      % Reference to last page number
+
+% ================================================================
+% PAGE LAYOUT & MARGINS
+% ================================================================
+\geometry{
+    a4paper,
+    left=0.7in,
+    right=0.7in,
+    top=0.6in,
+    bottom=0.55in
+}
+
+% TikZ library for calculating coordinates (used in border)
+\usetikzlibrary{calc}
+
+% Font setup - Use Source Sans Pro (modern sans-serif look)
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[sfdefault]{sourcesanspro}
+
+% ================================================================
+% PAGE BORDER (Black double-line border on every page)
+% ================================================================
+\backgroundsetup{
+  scale=1,
+  angle=0,
+  opacity=1,
+  contents={
+    \tikz[overlay,remember picture] {
+      \draw[line width=1pt, double, color=black]
+        ($(current page.north west) + (0.9cm, -.9cm)$)
+        rectangle
+        ($(current page.south east) + (-.9cm, .9cm)$);
+    }
+  }
+}
+
+% Line spacing - 1.5 spacing throughout document
+\onehalfspacing
+
+% ================================================================
+% BEGIN DOCUMENT
+% ================================================================
+\begin{document}
+
+% ================================================================
+% TITLE PAGE
+% ================================================================
+\begin{titlepage}
+  \centering
+  \vspace*{\fill}
+  \Huge \textbf{\projectname}                     % Project title
+  
+  \vspace*{\fill}
+  \large project report submitted in fulfilment of the requirements for the degree of \\
+  \vspace*{\fill}
+  
+  \Large \textbf{Bachelor of Technology}\\       % Degree
+  in\\
+  \textbf{\branch}                               % Branch
+  
+  \vspace*{\fill}\\
+  \large by \\[0.3cm]
+  
+  % Student names and roll numbers in a neat table
+  \begin{tabular}{l c l}
+    \textbf{\MakeUppercase{\studentone}} & - & \textbf{\studentidone}\\
+    \textbf{\MakeUppercase{\studenttwo}} & - & \textbf{\studentidtwo}\\
+    \textbf{\MakeUppercase{\studentthree}} & - & \textbf{\studentidthree}\\
+    \textbf{\MakeUppercase{\studentfour}} & - & \textbf{\studentidfour}\\
+    \textbf{\MakeUppercase{\studentfive}} & - & \textbf{\studentidfive}\\
+    \textbf{\MakeUppercase{\studentsix}} & - & \textbf{\studentidsix}\\
+  \end{tabular}
+  \\
+  \vspace*{\fill}
+  
+  \Large Under the Guidance of \\
+  \vspace*{\fill}
+  \Large \textbf{\Large \guidename} , \small \guidequal \\   % Guide name + qualification
+  \Large \qualification                                      % Designation
+  
+  \vspace*{\fill}
+  \begin{center}
+    \includegraphics[width=0.3\linewidth]{logos/logo_red.png}  % University logo
+  \end{center}
+  
+  \vspace*{\fill}
+  \Large \textbf{Department of \branch}\\
+  \vspace{0.3cm}
+  \textbf{\large \campus}                                    % Campus name
+  \vspace*{\fill}
+\end{titlepage}
+
+% ================================================================
+% PRELIMINARY PAGES (Roman numbering)
+% ================================================================
+\pagenumbering{roman}                          % i, ii, iii, ...
+
+% Background watermark (faint logo on certificate, declaration, etc.)
+\CenterWallPaper{0.7}{logos/background_logo.png}
+
+% --------------------- Certificate Page ---------------------
+\newpage
+\begin{center}
+    \vspace*{1cm}
+    \textbf{\Huge Certificate}
+\end{center}
+\vspace{1cm}
+\large
+\noindent This is to certify that the work entitled \textbf{“\projectname”} is a bonafide record of authentic work carried out by \textbf{\studentone} (\studentidone), \textbf{\studenttwo} (\studentidtwo), \textbf{\studentthree} (\studentidthree),
+\textbf{\studentfour} (\studentidfour), \textbf{\studentfive} (\studentidfive), \textbf{\studentsix} (\studentidsix) under my supervision and guidance for the fulfilment of the requirement of the award of the degree of Bachelor of Technology in the department of \branch at \campus. \\\\
+The results embodied in this work have not been submitted to any other university or institute for the award of any degree or diploma. This thesis , in our opinion , is worthy of consideration for the award of the degree of Bachelor of Technology in accordance with the regulations of the institute.
+
+\vspace*{\fill}
+\begin{center}
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    Project Guide\\
+    \textbf{\guidename} \\
+    \qualification \\
+    Dept of \branch \\
+    RGUKT - Srikakulam \\
+  \end{minipage}%
+  \hfill
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    Head of the Department\\
+    \textbf{\hodname} \\
+    \hodqual \\
+    Dept of \branch \\
+    RGUKT - Srikakulam \\
+  \end{minipage}
+\end{center}
+
+% --------------------- Declaration Page ---------------------
+\newpage
+\begin{center}
+    \vspace*{1cm}
+    \textbf{\Huge Declaration}
+\end{center}
+\vspace{1cm}
+\large
+\noindent We hereby declare that the dissertation entitled \textbf{\projectname} submitted for the Bachelor of Technology Degree is our original work , and the dissertation has not formed the basis for the award of any degree , associateship , fellowship , or any other similar titles.
+\vspace{1cm}
+\begin{flushleft}
+    \large
+    Place: Srikakulam \\
+    Date: \today \\
+    \vspace{0.5cm}
+    \studentone & - & \studentidone\\
+    \studenttwo & - & \studentidtwo\\
+    \studentthree & - & \studentidthree\\
+    \studentfour & - & \studentidfour\\
+    \studentfive & - & \studentidfive\\
+    \studentsix & - & \studentidsix\\
+\end{flushleft}
+
+% --------------------- Acknowledgement Page ---------------------
+\newpage
+\begin{center}
+    \vspace*{1cm}
+    \textbf{\Huge Acknowledgement}
+\end{center}
+\vspace{1cm}
+\large
+We would like to express my special thanks of gratitude to my project guide \textbf{\guidename} sir , \qualification , Department of \branch , who gave me the golden opportunity to do this wonderful project on the topic \textbf{" \projectname "} , which also helped me in doing a lot of research and I came to know about so many new things I am really thankful to them.
+\vspace*{\fill}
+\begin{center}
+    \Large \textbf{Department of \branch} \\
+    \vspace{0.3cm}
+    \large \textbf{\campus}
+\end{center}
+
+% --------------------- Abstract Page ---------------------
+\newpage
+\begin{center}
+    \vspace*{1cm}
+    \textbf{\Huge Abstract}
+\end{center}
+\vspace{1cm}
+\large
+\abstract                                          % Uses the \abstract command defined at top
+
+% --------------------- Table of Contents, Figures, Tables ---------------------
+\newpage
+\thispagestyle{empty}
+\renewcommand{\contentsname}{Table of Contents}
+
+% TOC formatting tweaks
+\renewcommand{\cftdotsep}{2}
+\setlength{\cftbeforesecskip}{5pt}
+\setlength{\cftbeforesubsecskip}{2pt}
+\setlength{\cftsecindent}{1em}
+\setlength{\cftsecnumwidth}{1.8em}
+\setlength{\cftsubsecindent}{2em}
+\setlength{\cftsubsecnumwidth}{2.5em}
+\renewcommand{\cftsecaftersnum}{.}
+\renewcommand{\cftsubsecaftersnum}{.}
+\renewcommand{\cftsubsecfont}{\large}
+\renewcommand{\cftsubsecpagefont}{\large}
+
+% List of Figures formatting
+\renewcommand{\cftfigaftersnum}{.}
+\setlength{\cftfigindent}{1em}
+\renewcommand{\cftfigfont}{\large}
+\renewcommand{\cftfigpagefont}{\large}
+
+% Generate TOC
+\renewcommand{\cftbeforetoctitleskip}{0pt}
+\renewcommand{\cftaftertoctitleskip}{10pt}
+\tableofcontents
+
+\newpage
+\renewcommand{\cftbeforeloftitleskip}{0pt}
+\renewcommand{\cftafterloftitleskip}{10pt}
+\listoffigures
+
+\newpage
+\renewcommand{\cftbeforelottitleskip}{0pt}
+\renewcommand{\cftafterlottitleskip}{10pt}
+\listoftables
+
+% ================================================================
+% MAIN CONTENT (Arabic numbering starts)
+% ================================================================
+
+\newpage
+\pagenumbering{arabic}
+% Fancy header/footer
+\pagestyle{fancy}
+\fancyhf{}
+% \lhead{\textit{\nouppercase{\leftmark}}}       % Chapter name in footer
+\cfoot{Page \thepage\ of \pageref{LastPage}}  % Page X of Y
+% \lfoot{\textit{\nouppercase{\rightmark}}}       % Chapter name in footer
+\renewcommand{\headrulewidth}{0pt}             % No header line
+
+% Chapter & section title formatting
+\titleformat{\chapter}[block]
+  {\centering\Huge\bfseries\color{black}}
+  {\thechapter.}
+  {0.5em}
+  {}
+\titleformat{\section}[block]
+  {\bfseries\Large}
+  {\thesection.}
+  {0.5em}
+  {}
+\titleformat{\subsection}[block]
+  {\bfseries}
+  {\thesubsection.}
+  {0.5em}
+  {}
+\titlespacing*{\chapter}{0pt}{-20pt}{20pt}
+
+
+% ================================================================
+% ACTUAL THESIS CONTENT (Example chapters)
+% ================================================================
+
+
+\chapter{Nebulosity and Quantum Flux}
+\lipsum[1-2]
+
+\section{Velocity Profiles in Hyperspace}
+\lipsum[3]
+\begin{itemize}[leftmargin=*]
+    \item Consectetur adipiscing elit sed do eiusmod tempor.
+    \item Incididunt ut labore et dolore magna aliqua.
+    \item Ut enim ad minim veniam quis nostrud exercitation.
+    \item Ullamco laboris nisi ut aliquip ex ea commodo.
+    \item Duis aute irure dolor in reprehenderit in voluptate.
+\end{itemize}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lcc}
+\toprule
+\textbf{Parameter} & \textbf{Value} & \textbf{Unit} \\
+\midrule
+Gravitational constant & 6.67430 & $\times 10^{-11}$ \\
+Planck length & 1.616 & $\times 10^{-35}$ m \\
+Hubble parameter & 67.4 & km/s/Mpc \\
+Dark energy fraction & 0.68 & -- \\
+\bottomrule
+\end{tabular}
+\caption{Dummy cosmological parameters.}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{example-image-a}
+\caption{Dummy visualization of spacetime curvature.}
+\end{figure}
+
+\section{Temporal Drift Compensation}
+\lipsum[4-5]
+
+\subsection{Subsection: Entropy Reversal Mechanisms}
+\lipsum[6]
+
+\begin{figure}[H]
+\centering
+\begin{minipage}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{example-image-b}
+    \caption{Dummy phase-space trajectory (before correction).}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{example-image-c}
+    \caption{Dummy phase-space trajectory (after correction).}
+\end{minipage}
+\end{figure}
+
+\section{Resonance Cascade Analysis}
+\lipsum[7]
+
+\begin{table}[H]
+\centering
+\begin{tabular}{| l | c | c | c |}
+\hline
+\textbf{Mode} & \textbf{Frequency (THz)} & \textbf{Amplitude} & \textbf{Damping} \\
+\hline
+Fundamental & 2.41 & 0.97 & 0.03 \\
+\hline
+First overtone & 7.23 & 0.81 & 0.07 \\
+\hline
+Second overtone & 12.05 & 0.44 & 0.19 \\
+\hline
+\end{tabular}
+\caption{Dummy resonance modes observed in the experiment.}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.55\textwidth]{example-image}
+\caption{Dummy spectrum showing resonance peaks.}
+\end{figure}
+
+\section{Conclusion and Future Directions}
+\lipsum[8-10]
+
+% ================================================================
+% ADD REFERENCES
+% ================================================================
+
+\newpage
+\begin{thebibliography}{99}
+
+\bibitem{isensee2024}
+Isensee, F., Jaeger, P. F., Kohl, S. A. A., Petersen, J., \& Maier-Hein, K. H. (2024).
+nnU-Net: A self-configuring method for deep learning-based biomedical image segmentation.
+{\em Nature Methods}, {\bf 18}(2), 203--211.
+\doi{10.1038/s41592-020-01008-z}
+
+\bibitem{ronneberger2015}
+Ronneberger, O., Fischer, P., \& Brox, T. (2015).
+U-Net: Convolutional networks for biomedical image segmentation.
+In {\em Medical Image Computing and Computer-Assisted Intervention -- MICCAI 2015} (pp. 234--241).
+Springer.
+\doi{10.1007/978-3-319-24574-4_28}
+
+\end{thebibliography}
+
+% ================================================================
+% END DOCUMENT
+% ================================================================
+
+
+\end{document}
