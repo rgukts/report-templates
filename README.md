@@ -5,7 +5,6 @@
 [![Overleaf](https://img.shields.io/badge/Overleaf-Ready-brightgreen.svg)](https://www.overleaf.com)
 
 [![LaTeX](https://img.shields.io/badge/LaTeX-Compiled-blue.svg)](https://github.com/YOUR_USERNAME/YOUR_REPO/releases)
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A complete, university-approved LaTeX template for **B.Tech Major Project Reports** at **Rajiv Gandhi University of Knowledge Technologies, Srikakulam**.
@@ -144,6 +143,12 @@ Contributions are welcome! Feel free to:
 **Made with ❤️ for RGUKT-Srikakulam students**  
 
 Feel free to ⭐ star and fork!
+
+---
+
+### Credits
+
+Created and maintained by [@alpharibbin](https://github.com/alpharibbin)
 
 ---
 
