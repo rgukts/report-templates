@@ -1,0 +1,82 @@
+\input{content}
+
+\documentclass[12pt]{report}
+\raggedbottom
+\usepackage{amsmath, graphicx, fancyhdr}
+\usepackage{geometry}
+\usepackage{tikz}
+\usepackage{setspace}
+\usepackage{xcolor}
+
+
+\definecolor{mycolor}{RGB}{212,175,55}
+\color{mycolor}
+\AtBeginDocument{\color{mycolor}}
+
+% Text stays inside 0.5in margin
+\geometry{
+    a4paper,
+    left=0.5in,
+    right=0.5in,
+    top=0.5in,
+    bottom=0.5in
+}
+
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[sfdefault]{sourcesanspro}
+\onehalfspacing
+
+\usepackage[pages=some]{background}
+\backgroundsetup{
+  scale=1,
+  angle=0,
+  opacity=1,
+  contents={\includegraphics[width=\paperwidth,height=\paperheight]{cover page/borders/gold_border.png}
+  }
+}
+\BgThispage
+
+\begin{document}
+
+\begin{titlepage}
+  \centering
+  \vspace*{\fill}
+  \Huge
+  \textbf{\projectname}
+  \vspace{0.5cm}\\
+  \large project report submitted in fulfilment of the requirements for the degree of \\
+  \vspace{0.5cm}
+  \Large \textbf{Bachelor of Technology}\\
+  in\\
+  \textbf{\branch}
+  \vspace{0.3cm}\\
+  \large by \\[0.3cm]
+  \begin{tabular}{l c l}
+    \textbf{\MakeUppercase{\studentone}} & - & \textbf{\studentidone}\\
+    \textbf{\MakeUppercase{\studenttwo}} & - & \textbf{\studentidtwo}\\
+    \textbf{\MakeUppercase{\studentthree}} & - & \textbf{\studentidthree}\\
+    \textbf{\MakeUppercase{\studentfour}} & - & \textbf{\studentidfour}\\
+    \textbf{\MakeUppercase{\studentfive}} & - & \textbf{\studentidfive}\\
+    \textbf{\MakeUppercase{\studentsix}} & - & \textbf{\studentidsix}\\
+  \end{tabular}\\
+  \vspace{0.6cm}
+  \Large
+  Under the Guidance of \\
+  \vspace{0.6cm}
+  \Large
+  \textbf{\guidename} , \small \guidequal \\
+  \Large\qualification 
+  \vspace*{\fill}
+  \begin{center}
+    \includegraphics[width=0.3\linewidth]{logos/logo_gold.png}
+  \end{center}
+  \vspace*{\fill}
+  \Large
+  \textbf{Department of \branch}\\
+  \textbf{\large \campus}\\
+  \vspace{0.3cm}
+  \large\textbf{\submissiondate}
+  \vspace*{\fill}
+\end{titlepage}
+
+\end{document}
