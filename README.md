@@ -1,11 +1,6 @@
 # B.Tech Major Project Report – RGUKT Srikakulam  
 
-**Department of Electronics and Communication Engineering**
-
-[![Overleaf](https://img.shields.io/badge/Overleaf-Ready-brightgreen.svg)](https://www.overleaf.com)
-
-[![LaTeX](https://img.shields.io/badge/LaTeX-Compiled-blue.svg)](https://github.com/YOUR_USERNAME/YOUR_REPO/releases)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Overleaf](https://img.shields.io/badge/Overleaf-Ready-brightgreen.svg)](https://www.overleaf.com)[![LaTeX](https://img.shields.io/badge/LaTeX-Compiled-blue.svg)](https://github.com/rgukts/report-templates/releases)[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)[![GitHub stars](https://img.shields.io/github/stars/rgukts/report-templates?style=social)](https://github.com/rgukts/report-templates)[![GitHub forks](https://img.shields.io/github/forks/rgukts/report-templates?style=social)](https://github.com/rgukts/report-templates)[![GitHub issues](https://img.shields.io/github/issues/rgukts/report-templates)](https://github.com/rgukts/report-templates/issues)[![GitHub release](https://img.shields.io/github/v/release/rgukts/report-templates)](https://github.com/rgukts/report-templates/releases)
 
 A complete, university-approved LaTeX template for **B.Tech Major Project Reports** at **Rajiv Gandhi University of Knowledge Technologies, Srikakulam**.
 
@@ -24,6 +19,8 @@ Fully formatted as per RGUKT guidelines:
 ### Preview
 
 [PDF Download – Latest Version](project_report_template.pdf)
+
+**Repository:** [https://github.com/rgukts/report-templates](https://github.com/rgukts/report-templates)
 
 ---
 
